@@ -1,0 +1,24 @@
+Conforme comunicado via WhatsApp, ao tentar automatizar o   site solicitado, Upwork, notei que possui uma política rigorosa contra web scraping e implementa mecanismos de detecção de bots, como Playwright e Selenium. Além de criptografar
+respostas via request. Tentei as 3 abordagens acima, nas duas primeiras ele me manda para um capcha que também tentei automatizar (usando PyAutoGUI) porém, ao entrar na tela desse capcha não é possível sair, nem mesmo quando tentei 
+fazer sem automação, o site me redireciona novemente para o capcha, me deixando num loop infinito. Sendo assim, deixei os arquivos: "tentativa-playwright.py" e "tentativa-selenium.py" no repositório caso desejem ver. E para, conseguir
+finalizar o desafio proposto, fiz a automação entrando diretamente na página de emprego, pegando todos os dados, salvando no backend sqlite e então colocando na planilha.
+
+
+Para rodar o projeto é necessário algumas libs, você poode instala-las usando o comando:
+pip install -r requirements.txt. 
+
+Porém caso não funcione, você pode setar um venv e então instalar: 
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+Também é necessário instalar o playwright: 
+playwright install
+
+Além disso, é necessário colocar o arquivo json que enviei via email, na pasta do repositório para rodar.
+
+
+O passo a passo para executar todas as etapas do desafio é:  
+1. Rodar a automação: python getInfo.py
+2. Rodar o sheet: python saveSheet.py
+																			
