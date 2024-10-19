@@ -1,5 +1,6 @@
 import pandas as pd
 import gspread
+import os
 from oauth2client.service_account import ServiceAccountCredentials
 from backend import select, connect, disconnect
 
@@ -15,7 +16,9 @@ def get_data_from_db():
 
 def insert_data_to_google_sheets(df, spreadsheet_id):
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('C:/Users/julia/Documents/Programacao/Projeto Tributo Devido/idyllic-root-439113-t5-9d29fc346aea.json', scope)
+    current_path = os.getcwd()
+    json_file_path = os.path.join(current_path, 'idyllic-root-439113-t5-9d29fc346aea.json')
+    creds = ServiceAccountCredentials.from_json_keyfile_name(json_file_path, scope)
     
     client = gspread.authorize(creds)
     
